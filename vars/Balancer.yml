@@ -11,8 +11,8 @@ haproxy_backend_httpchk: 'HEAD / HTTP/1.1\r\nHost:localhost'
 
 haproxy_backend_servers:
   - name: pi04
-    address: 10.2.78.104:80
+    address: 10.2.78.104:8080
   - name: pi05
-    address: 10.2.78.105:80
+    address: 10.2.78.105:8080
 
 apache_packages_state: absent
