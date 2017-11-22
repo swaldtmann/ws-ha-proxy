@@ -1,6 +1,6 @@
 # Makefile for pi-stack-ansible-tower-scripts
 
-.PHONY: ev dump dumpvars ping 
+.PHONY: ev dump dumpvars ping
 
 
 ev:
@@ -11,7 +11,9 @@ dump:
 
 dumpvars:
     ansible -i inventory -m debug -a 'var=hostvars[inventory_hostname]' all
-    
+
 ping:
     ansible -i inventory all -m ping -u pi
 
+bal:
+	ansible-playbook -i inventory Balancer balancer.yml

@@ -2,5 +2,7 @@
 - name: Install load Balancer
   hosts: Balancer
   become: yes
+  vars_files:
+    - vars/Balancer.yml
   roles:
     - { role: ansible-role-haproxy }
