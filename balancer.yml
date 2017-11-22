@@ -1,0 +1,6 @@
+---
+- name: Install load Balancer
+  hosts: Balancer
+  become: yes
+  roles:
+    - { role: ansible-role-haproxy }
