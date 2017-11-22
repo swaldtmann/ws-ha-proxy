@@ -1,19 +1,17 @@
 # Makefile for pi-stack-ansible-tower-scripts
 
-.PHONY: ev dump dumpvars ping
-
 
 ev:
-    ansible-vault edit group_vars/all/vault
+	ansible-vault edit group_vars/all/vault
 
 dump:
-    ansible -i inventory -m setup all
+	ansible -i inventory -m setup all
 
 dumpvars:
-    ansible -i inventory -m debug -a 'var=hostvars[inventory_hostname]' all
+	ansible -i inventory -m debug -a 'var=hostvars[inventory_hostname]' all
 
 ping:
-    ansible -i inventory all -m ping -u pi
+	ansible -i inventory all -m ping -u pi
 
 bal:
-	ansible-playbook -i inventory Balancer balancer.yml
+	ansible-playbook -i inventory balancer.yml -u pi -k

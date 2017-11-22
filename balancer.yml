@@ -6,3 +6,4 @@
     - vars/Balancer.yml
   roles:
     - { role: ansible-role-haproxy }
+    - { role: ansible-role-apache }

@@ -14,3 +14,5 @@ haproxy_backend_servers:
     address: 10.2.78.104:80
   - name: pi05
     address: 10.2.78.105:80
+
+apache_packages_state: absent
